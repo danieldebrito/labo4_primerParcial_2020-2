@@ -8,11 +8,12 @@
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let pais of paises">
+          <tr *ngFor="let pais of paises  | paginate: { itemsPerPage: 4, currentPage: p }">
               <td> {{ pais.name }} </td>
               <td> <img src="{{ pais.flag }} "></td>
               <td> <button type="button" class="btn btn-success" (click)="enviarPais(pais)"><i class="fa fa-eye"></i></button> </td>
           </tr>
       </tbody>
   </table>
+  <pagination-controls (pageChange)="p = $event" previousLabel="Previo" nextLabel="Siguiente"></pagination-controls>
 </div>

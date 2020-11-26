@@ -11,7 +11,9 @@ export class PaisesTablaComponent implements OnInit {
   @Input() paises: Pais[];
   @Output() pasaPais = new EventEmitter();
 
-  constructor() { }
+  public p: number;  // paginacion primer page
+
+  constructor() { this.p = 1; }
 
   public enviarPais(pais: Pais) {
     this.pasaPais.emit({paisEnviado: pais});
