@@ -1,0 +1,11 @@
+<div class="container-fluid">
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <app-paises-tabla (pasaPais)="mostrarPais($event)" [paises]="paises"></app-paises-tabla>
+    </div>
+    <div class="col-sm-4">
+        <app-paises-detalle [pais]="pais"></app-paises-detalle>
+    </div>
+</div>
