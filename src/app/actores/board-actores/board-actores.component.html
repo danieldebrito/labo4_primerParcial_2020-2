@@ -13,6 +13,6 @@
     <app-actores-detalle [actor]="actor" ></app-actores-detalle>
   </div>
   <div class="col-sm-4">
-    <p>mod</p>
+    <app-actores-modificar [actor]="actor" (lanzaActorModificar)="nodificaActor($event)" ></app-actores-modificar>
   </div>
 </div>

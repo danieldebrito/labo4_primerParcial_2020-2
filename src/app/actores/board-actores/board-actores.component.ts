@@ -30,6 +30,10 @@ export class BoardActoresComponent implements OnInit {
     // this.getActores();
   }
 
+  public nodificaActor(event){
+    this.actoresSvc.updateItem(event.actorLanzado)
+  }
+
   ngOnInit(): void {
     this.getActores();
   }

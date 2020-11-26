@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Actor } from 'src/app/actores/class/actor';
 
 @Component({
   selector: 'app-actores-modificar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActoresModificarComponent implements OnInit {
 
+  @Input() actor: Actor = {};
+  @Output() lanzaActorModificar = new EventEmitter();
+
   constructor() { }
 
-  ngOnInit(): void {
+  public modificarActor(actor: Actor) {
+    this.lanzaActorModificar.emit({actorLanzado: actor});
   }
 
+  ngOnInit() {
+  }
 }
