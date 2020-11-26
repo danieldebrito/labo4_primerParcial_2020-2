@@ -7,7 +7,6 @@ import { Actor } from 'src/app/actores/class/actor';
 
 import { Pais } from 'src/app/paises/class/pais';
 import { PaisesService } from 'src/app/paises/services/paises.service';
-import { element } from 'protractor';
 
 
 @Component({
