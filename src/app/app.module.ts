@@ -24,6 +24,8 @@ import { ActoresBusquedaComponent } from './actores/board-actores/actores-busque
 import { ActoresListadoComponent } from './actores/board-actores/actores-listado/actores-listado.component';
 import { ActoresComponent } from './actores/actores.component';
 import { ActoresDetalleComponent } from './actores/board-actores/actores-detalle/actores-detalle.component';
+import { ActoresBorrarComponent } from './actores/board-actores/actores-borrar/actores-borrar.component';
+import { ActoresModificarComponent } from './actores/board-actores/actores-modificar/actores-modificar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ActoresDetalleComponent } from './actores/board-actores/actores-detalle
     ActoresBusquedaComponent,
     ActoresListadoComponent,
     ActoresComponent,
-    ActoresDetalleComponent
+    ActoresDetalleComponent,
+    ActoresBorrarComponent,
+    ActoresModificarComponent
   ],
   imports: [
     BrowserModule,

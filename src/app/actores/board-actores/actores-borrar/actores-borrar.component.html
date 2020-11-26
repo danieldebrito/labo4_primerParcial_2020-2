@@ -1,0 +1,5 @@
+<form #formProducto="ngForm" (ngSubmit)="lanzarBorrado(actor)" id="form-producto">
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger" >Borrar a {{ actor.nombre }}, {{ actor.apellido }} </button>
+    </div>
+</form>

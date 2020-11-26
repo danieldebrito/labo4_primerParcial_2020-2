@@ -25,6 +25,11 @@ export class BoardActoresComponent implements OnInit {
     this.actor = event.actorLanzado;
   }
 
+  public borrarActor (event) {
+    this.actoresSvc.deleteItem(event.actorLanzado);
+    // this.getActores();
+  }
+
   ngOnInit(): void {
     this.getActores();
   }
