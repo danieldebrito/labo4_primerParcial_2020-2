@@ -9,19 +9,20 @@ import { PaisesListadoComponent } from './paises/board-paises/paises-listado/pai
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
-  // { path: '**', component: PageNotFoundComponent },
   {
     path: 'paises',
     component: BoardPaisesComponent,
     children:
       [{ path: '', component: PaisesListadoComponent },
       { path: 'listado', component: PaisesListadoComponent }]
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
