@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="container-fluid">
+
+      <div class="p-3 mb-2 bg-info text-white">PELICULAS: Alta</div>
+
+      <form #formProducto="ngForm" (ngSubmit)="add()" id="form-producto">
+          <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" [(ngModel)]="pelicula.nombre" [ngModelOptions]="{standalone: true}" id="nombre" name="nombre" placeholder="Nombre">
+          </div>
+          <div class="form-group">
+              <label for="genero">Genero</label>
+              <input type="text" class="form-control" [(ngModel)]="pelicula.genero" [ngModelOptions]="{standalone: true}" id="genero" name="genero" placeholder="genero">
+          </div>
+          <div class="form-group">
+              <label for="fecha">Fecha de Estreno</label>
+              <input type="date" class="form-control" id="fechaestreno" placeholder="Fecha de estreno" name="fechaestreno" [(ngModel)]="pelicula.fechaestreno" [ngModelOptions]="{standalone: true}">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+  </div>
+  </div>
+  <div class="col-sm-6">
+    <!--
+    <app-paises-tabla (pasaPais)="mostrarPais($event)" [paises]="paises"></app-paises-tabla>
+    -->
+  </div>
+</div>

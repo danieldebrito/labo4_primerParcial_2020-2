@@ -11,6 +11,9 @@ import { ActoresComponent } from './actores/actores.component';
 import { BoardActoresComponent } from './actores/board-actores/board-actores.component';
 import { ActoresAltaComponent } from './actores/board-actores/actores-alta/actores-alta.component';
 
+import { PeliculasComponent } from './peliculas/peliculas.component';
+import { PeliculasAltaComponent } from './peliculas/peliculas-board/peliculas-alta/peliculas-alta.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -33,6 +36,15 @@ const routes: Routes = [
       [{ path: '', component: ActoresComponent },
       { path: 'listado', component: BoardActoresComponent },
       { path: 'alta', component: ActoresAltaComponent }
+    ]
+  },
+  {
+    path: 'peliculas',
+    component: PeliculasComponent,
+    children:
+      [{ path: '', component: PeliculasComponent },
+      // { path: 'listado', component: BoardActoresComponent },
+      { path: 'alta', component: PeliculasAltaComponent }
     ]
   },
   { path: '**', component: PageNotFoundComponent }
