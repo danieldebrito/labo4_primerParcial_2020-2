@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActoresFirebaseService } from 'src/app/actores/services/actores-firebase.service';
+import { Actor } from 'src/app/actores/class/actor';
 
 @Component({
   selector: 'app-board-actores',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardActoresComponent implements OnInit {
 
-  constructor() { }
+  public actores: Actor[] = [];
+  public actor: Actor = {};
 
-  ngOnInit(): void {
+  constructor(private actoresSvc: ActoresFirebaseService) { }
+
+  getActores() {
+    this.actoresSvc.getItems().subscribe(response => {
+      this.actores = response;
+      return response;
+    });
   }
 
+  public mostrarActor(event) {
+    this.actor = event.actorLanzado;
+  }
+
+  ngOnInit(): void {
+    this.getActores();
+  }
 }

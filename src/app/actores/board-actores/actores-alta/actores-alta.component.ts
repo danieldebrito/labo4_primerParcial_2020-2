@@ -29,6 +29,7 @@ export class ActoresAltaComponent implements OnInit {
 
   public mostrarPais(event) {
     this.pais = event.paisEnviado;
+    this.actor.paisOrigen = this.pais.name;
   }
 
   public add() {

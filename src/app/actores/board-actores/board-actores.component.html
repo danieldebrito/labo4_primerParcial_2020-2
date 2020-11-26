@@ -1,8 +1,17 @@
 <div class="row">
-  <div class="col-sm-6">
-    <app-actores-alta></app-actores-alta>
+  <div class="col-sm-12">
+    <app-actores-listado [actores]="actores" (lanzaActor)="mostrarActor($event)"></app-actores-listado>
   </div>
-  <div class="col-sm-6">
-    <app-paises-listado></app-paises-listado>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <p>borrar</p>
+  </div>
+  <div class="col-sm-4">
+    <app-actores-detalle [actor]="actor" ></app-actores-detalle>
+  </div>
+  <div class="col-sm-4">
+    <p>mod</p>
   </div>
 </div>

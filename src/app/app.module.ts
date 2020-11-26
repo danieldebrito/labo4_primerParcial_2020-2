@@ -23,6 +23,7 @@ import { ActoresAltaComponent } from './actores/board-actores/actores-alta/actor
 import { ActoresBusquedaComponent } from './actores/board-actores/actores-busqueda/actores-busqueda.component';
 import { ActoresListadoComponent } from './actores/board-actores/actores-listado/actores-listado.component';
 import { ActoresComponent } from './actores/actores.component';
+import { ActoresDetalleComponent } from './actores/board-actores/actores-detalle/actores-detalle.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ActoresComponent } from './actores/actores.component';
     ActoresAltaComponent,
     ActoresBusquedaComponent,
     ActoresListadoComponent,
-    ActoresComponent
+    ActoresComponent,
+    ActoresDetalleComponent
   ],
   imports: [
     BrowserModule,
