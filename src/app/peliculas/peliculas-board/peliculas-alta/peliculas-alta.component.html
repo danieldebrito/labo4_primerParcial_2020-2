@@ -17,13 +17,16 @@
               <label for="fecha">Fecha de Estreno</label>
               <input type="date" class="form-control" id="fechaestreno" placeholder="Fecha de estreno" name="fechaestreno" [(ngModel)]="pelicula.fechaestreno" [ngModelOptions]="{standalone: true}">
           </div>
+          <app-paises-detalle [pais]="pais"></app-paises-detalle>
+
+          <app-actores-listado [actores]="actoresAdd"></app-actores-listado>
+
           <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
   </div>
   </div>
   <div class="col-sm-6">
-    <!--
-    <app-paises-tabla (pasaPais)="mostrarPais($event)" [paises]="paises"></app-paises-tabla>
-    -->
+    <app-actores-listado [actores]="actores" (lanzaActor)="agregarActor($event)"></app-actores-listado>
+    <app-paises-tabla (pasaPais)="agregarPais($event)" [paises]="paises"></app-paises-tabla>
   </div>
 </div>
