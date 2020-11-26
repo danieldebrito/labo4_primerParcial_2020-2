@@ -7,6 +7,10 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 import { BoardPaisesComponent } from './paises/board-paises/board-paises.component';
 import { PaisesListadoComponent } from './paises/board-paises/paises-listado/paises-listado.component';
 
+import { ActoresComponent } from './actores/actores.component';
+import { BoardActoresComponent } from './actores/board-actores/board-actores.component';
+import { ActoresAltaComponent } from './actores/board-actores/actores-alta/actores-alta.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -21,6 +25,15 @@ const routes: Routes = [
     children:
       [{ path: '', component: PaisesListadoComponent },
       { path: 'listado', component: PaisesListadoComponent }]
+  },
+  {
+    path: 'actores',
+    component: ActoresComponent,
+    children:
+      [{ path: '', component: ActoresComponent },
+      { path: 'listado', component: BoardActoresComponent },
+      { path: 'alta', component: ActoresAltaComponent }
+    ]
   },
   { path: '**', component: PageNotFoundComponent }
 ];

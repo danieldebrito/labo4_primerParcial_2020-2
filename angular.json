@@ -123,8 +123,13 @@
               "devServerTarget": "primerrParcialLabo4:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "primerrParcialLabo4"
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "labo4-1er-parcial": {
+      "hosting": {
+        "primerrParcialLabo4": [
+          "labo4-1er-parcial"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="container-fluid">
+
+      <div class="p-3 mb-2 bg-info text-white">ACTORES: Alta</div>
+
+      <form #formProducto="ngForm" (ngSubmit)="add()" id="form-producto">
+          <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" [(ngModel)]="actor.nombre" [ngModelOptions]="{standalone: true}" id="nombre" name="nombre" placeholder="Nombre">
+          </div>
+          <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" [(ngModel)]="actor.apellido" [ngModelOptions]="{standalone: true}" id="apellido" name="apellido" placeholder="Apellido">
+          </div>
+          <div class="form-group">
+              <label for="sexo">Sexo</label>
+              <input type="text" class="form-control" [(ngModel)]="actor.sexo" [ngModelOptions]="{standalone: true}" id="sexo" name="sexo" placeholder="Sexo">
+          </div>
+          <div class="form-group">
+              <label for="sexo">Pais</label>
+              <h1> {{ paisNombre }}</h1>
+              <input type="text" class="form-control" [(ngModel)]="actor.paisOrigen" [ngModelOptions]="{standalone: true}" id="pais" name="pais" value="hola" placeholder="Pais">
+          </div>
+          <div class="form-group">
+              <label for="fecha">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="fecha" placeholder="Fecha de estreno" name="fecha" [(ngModel)]="actor.fechanacimiento" [ngModelOptions]="{standalone: true}">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+  </div>
+  </div>
+  <div class="col-sm-6">
+    <app-paises-tabla (pasaPais)="mostrarPais($event)" [paises]="paises"></app-paises-tabla>
+  </div>
+</div>
