@@ -8,7 +8,7 @@ import { Pais } from 'src/app/paises/class/pais';
 })
 export class PaisesDetalleComponent implements OnInit {
 
-  @Input() pais: Pais= {};
+  @Input() pais: Pais = {};
   @Output() borrarPais = new EventEmitter();
 
   constructor() { }
