@@ -25,17 +25,15 @@ export class PelisPaisComponent implements OnInit {
     private peliculasService: PeliculasFirebaseService
   ) { }
 
-
   public getPeliculas() {
-    this.peliculasService.getItems().subscribe(async response => {
+    this.peliculasService.getItems().subscribe(response => {
       this.peliculas = response;
+      this.filteredValues = response.filter(item => item.pais.name !== undefined && item.pais.name === 'Argentina');
+      console.log(this.filteredValues);
     });
   }
 
   ngOnInit(): void {
     this.getPeliculas();
-    this.filteredValues = this.peliculas.filter(item => item.pais.name === 'Argentina');
-      console.log(this.filteredValues);
-      console.log(this.peliculas);
   }
 }
