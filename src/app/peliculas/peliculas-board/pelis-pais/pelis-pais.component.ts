@@ -16,6 +16,7 @@ export class PelisPaisComponent implements OnInit {
 
   public actores: Actor[] = [];
 
+
   public pais: Pais = {};
   public paises: Pais[] = [];
 
@@ -24,15 +25,15 @@ export class PelisPaisComponent implements OnInit {
 
   public peliculas: Pelicula[] = [];
 
+  public p: number;  // paginacion primer page
+
   constructor(
     private actoresSvc: ActoresFirebaseService,
     private paisesService: PaisesService,
     private peliculasService: PeliculasFirebaseService
-  ) { }
+  ) { this.p = 1; }
 
     /*******************   ACTORES  ************************ */
-
-
   getActores() {
     this.actoresSvc.getItems().subscribe(response => {
       this.actores = response;
@@ -43,22 +44,31 @@ export class PelisPaisComponent implements OnInit {
   filtrarActores(){
     this.actoresSvc.getItems().subscribe(response => {
       this.actores = response;
-      this.actores = response.filter(item => item.paisOrigen !== undefined && item.paisOrigen === 'Argentina');
+      this.actores = response.filter(item => item.paisOrigen !== undefined && item.paisOrigen === this.pais.name);
       return response;
     });
 
   }
 
   /*******************   PELICULAS  ************************ */
-
-
   public getPeliculas() {
     this.peliculasService.getItems().subscribe(response => {
       this.peliculas = response;
-      this.filteredValues = response.filter(item => item.pais.name !== undefined && item.pais.name === 'Argentina');
-      console.log(this.filteredValues);
+
+      return response;
     });
   }
+
+  public filtrarPeliculas() {
+    this.peliculasService.getItems().subscribe(response => {
+      this.peliculas = response;
+      this.filteredValues = response.filter(item => item.pais.name !== undefined && item.pais.name === this.pais.name);
+
+      return response;
+    });
+  }
+
+
 
 /*******************   PAISES  ************************ */
   public getPaises() {
@@ -69,11 +79,13 @@ export class PelisPaisComponent implements OnInit {
 
   public mostrarPais(event) {
     this.pais = event.paisEnviado;
+    this.filtrarActores();
+    this.filtrarPeliculas();
   }
 
   ngOnInit(): void {
-    this.getPeliculas();
     this.getPaises();
     this.filtrarActores();
+    this.filtrarPeliculas();
   }
 }
