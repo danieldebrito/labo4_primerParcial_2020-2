@@ -5,6 +5,7 @@ import { PeliculasFirebaseService } from 'src/app/peliculas/services/peliculas-f
 import { Actor } from 'src/app/actores/class/actor';
 import { Pelicula } from 'src/app/peliculas/class/pelicula';
 import { Pais } from 'src/app/paises/class/pais';
+import { ActoresFirebaseService } from 'src/app/actores/services/actores-firebase.service';
 
 @Component({
   selector: 'app-pelis-pais',
@@ -19,13 +20,34 @@ export class PelisPaisComponent implements OnInit {
   public paises: Pais[] = [];
 
   public filteredValues: Pais[] = [];
+  public actoresFiltered: Actor[] = [];
 
   public peliculas: Pelicula[] = [];
 
   constructor(
+    private actoresSvc: ActoresFirebaseService,
     private paisesService: PaisesService,
     private peliculasService: PeliculasFirebaseService
   ) { }
+
+    /*******************   ACTORES  ************************ */
+
+
+  getActores() {
+    this.actoresSvc.getItems().subscribe(response => {
+      this.actores = response;
+      return response;
+    });
+  }
+
+  filtrarActores(){
+    this.actoresSvc.getItems().subscribe(response => {
+      this.actores = response;
+      this.actores = response.filter(item => item.paisOrigen !== undefined && item.paisOrigen === 'Argentina');
+      return response;
+    });
+
+  }
 
   /*******************   PELICULAS  ************************ */
 
@@ -52,5 +74,6 @@ export class PelisPaisComponent implements OnInit {
   ngOnInit(): void {
     this.getPeliculas();
     this.getPaises();
+    this.filtrarActores();
   }
 }
