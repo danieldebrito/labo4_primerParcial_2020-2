@@ -1,17 +1,18 @@
 <div class="row">
-  <div class="col-sm-12">
-    <app-actores-listado [actores]="actores"></app-actores-listado>
+  <div class="col-sm-8">
+    <app-paises-tabla (pasaPais)="mostrarPais($event)" [paises]="paises"></app-paises-tabla>
+  </div>
+  <div class="col-sm-4">
+    <app-paises-detalle [pais]="pais"></app-paises-detalle>
   </div>
 </div>
 
 <div class="row">
-
   <div class="col-sm-8">
     <app-pelis-listado [peliculas]="filteredValues"></app-pelis-listado>
-    <app-actores-listado [actores]="actores"></app-actores-listado>
   </div>
 
   <div class="col-sm-4">
-    <app-paises-detalle [pais]="pais"></app-paises-detalle>
+    <app-actores-listado [actores]="actores"></app-actores-listado>
   </div>
 </div>

@@ -14,16 +14,21 @@ import { Pais } from 'src/app/paises/class/pais';
 export class PelisPaisComponent implements OnInit {
 
   public actores: Actor[] = [];
-  public paises: Pais[] = [];
-  public filteredValues: Pais[] = [];
 
   public pais: Pais = {};
+  public paises: Pais[] = [];
+
+  public filteredValues: Pais[] = [];
+
   public peliculas: Pelicula[] = [];
 
   constructor(
     private paisesService: PaisesService,
     private peliculasService: PeliculasFirebaseService
   ) { }
+
+  /*******************   PELICULAS  ************************ */
+
 
   public getPeliculas() {
     this.peliculasService.getItems().subscribe(response => {
@@ -33,7 +38,19 @@ export class PelisPaisComponent implements OnInit {
     });
   }
 
+/*******************   PAISES  ************************ */
+  public getPaises() {
+    this.paisesService.ListarO().subscribe(response => {
+        this.paises = response;
+    });
+  }
+
+  public mostrarPais(event) {
+    this.pais = event.paisEnviado;
+  }
+
   ngOnInit(): void {
     this.getPeliculas();
+    this.getPaises();
   }
 }
