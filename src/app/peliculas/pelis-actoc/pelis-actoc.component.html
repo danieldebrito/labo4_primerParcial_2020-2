@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-8">
+    <app-pelis-listado [peliculas]="peliculas"  (lanzaPelicula)="mostrarPais($event)" ></app-pelis-listado>
+  </div>
+  <div class="col-sm-4">
+    <app-paises-detalle [pais]="pais" ></app-paises-detalle>
+    <button type="button" class="btn btn-success" (click)="filtrarActoresPais()" >Actores de este pais</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8">
+    <app-actores-listado [actores]="actoresPeli" (lanzaActor)="muestraActor($event)" ></app-actores-listado>
+
+  </div>
+
+  <div class="col-sm-4">
+    <app-actores-detalle   [actor]="actor" (lanzaActorModificar)="muestraActor($event)" ></app-actores-detalle>
+  </div>
+</div>

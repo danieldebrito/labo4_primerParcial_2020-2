@@ -10,11 +10,17 @@ export class PaisesDetalleComponent implements OnInit {
 
   @Input() pais: Pais = {};
   @Output() borrarPais = new EventEmitter();
+  @Output() lanzaPais = new EventEmitter();
+
 
   constructor() { }
 
   public lanzarBorrado(pais: Pais) {
     this.borrarPais.emit({paisDeshabilitado: pais});
+  }
+
+  public enviarPais(pais: Pais) {
+    this.lanzaPais.emit({paisLanzado: pais});
   }
 
   ngOnInit() {

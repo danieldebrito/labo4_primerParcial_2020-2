@@ -1,3 +1,8 @@
 .card-title {
   text-anchor: middle;
 }
+
+div.center {
+  width: 330px;
+  margin: 0 auto;
+}

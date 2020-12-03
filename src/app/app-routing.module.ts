@@ -14,6 +14,7 @@ import { ActoresAltaComponent } from './actores/board-actores/actores-alta/actor
 import { PeliculasComponent } from './peliculas/peliculas.component';
 import { PeliculasAltaComponent } from './peliculas/peliculas-board/peliculas-alta/peliculas-alta.component';
 import { PelisPaisComponent } from './peliculas/peliculas-board/pelis-pais/pelis-pais.component';
+import { PelisActocComponent } from './peliculas/pelis-actoc/pelis-actoc.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
     children:
       [{ path: '', component: PeliculasComponent },
       { path: 'paisPelicula', component: PelisPaisComponent },
+      { path: 'paisPeliActor', component: PelisActocComponent },
       { path: 'alta', component: PeliculasAltaComponent }
     ]
   },
