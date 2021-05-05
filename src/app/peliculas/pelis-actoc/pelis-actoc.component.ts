@@ -58,10 +58,6 @@ export class PelisActocComponent implements OnInit {
   }
 
   filtrarActoresPais(){
-    // this.pais = event.paisEnviado;
-    // alert(event.paisEnviado);
-    // this.actores = response.filter(item => item.paisOrigen !== undefined && item.paisOrigen === this.pais.name);
-
     this.actoresPeli = this.actoresPeli.filter(item => item.nombre !== undefined && item.paisOrigen === this.pais.name);
 
     this.actoresSvc.getItems().subscribe(response => {
